@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 
 function MovieCard({
   title,
@@ -14,4 +14,25 @@ function MovieCard({
   );
 }
 
-export default MovieCard;
+export default MovieCard;*/
+
+function MovieCard (props) {
+  return (
+    <div className="movie-card">
+      <img src={props.posterSrc} alt={props.title} />
+      <h2>{props.title}</h2>
+      <small>{props.genres.join(", ")}</small>
+    </div>
+  );
+}
+
+// With Destructuring
+function MovieCard({ title, posterSrc, genres }) {
+  return (
+    <div className="movie-card">
+      <img src={posterSrc} alt={title} />
+      <h2>{title}</h2>
+      <small>{genres.join(", ")}</small>
+    </div>
+  );
+}
